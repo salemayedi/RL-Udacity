@@ -2,8 +2,8 @@ from collections import deque
 import torch
 import numpy as np
 
-def dqn(agent, env, brain_name, n_episodes=2000, max_t=1000, eps_start=1.0, eps_end=0.01, eps_decay=0.995):
-    """Deep Q-Learning.
+def dqn(agent, env, brain_name, type_dqn, n_episodes=1000, max_t=1000, eps_start=1.0, eps_end=0.01, eps_decay=0.995):
+    """ DOUBLE Deep Q-Learning.
     
     Params
     ======
@@ -27,7 +27,7 @@ def dqn(agent, env, brain_name, n_episodes=2000, max_t=1000, eps_start=1.0, eps_
             next_state = env_info.vector_observations[0]   # get the next state
             reward = env_info.rewards[0]                   # get the reward
             done = env_info.local_done[0] 
-            agent.step(state, action, reward, next_state, done)
+            agent.step(state, action, reward, next_state, done, type_dqn)
             state = next_state
             score += reward
             if done:

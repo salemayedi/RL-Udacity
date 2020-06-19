@@ -5,10 +5,12 @@ import matplotlib.pyplot as plt
 from unityagents import UnityEnvironment
 from agent import Agent
 from dqn import dqn
+import os
 
 
 
-env = UnityEnvironment(file_name="C:/Users/SalemAyadi/Documents/Salem/udacity_project/rl_navigator/Banana_Windows_x86_64/Banana.exe")
+env_path = os.path.join(os.getcwd(),"Banana_Windows_x86_64/Banana.exe")
+env = UnityEnvironment(file_name = env_path)
 # get the default brain
 brain_name = env.brain_names[0]
 brain = env.brains[brain_name]
@@ -20,8 +22,8 @@ action_size = brain.vector_action_space_size
 state = env_info.vector_observations[0]
 state_size = len(state)
 
-agent = Agent(state_size=state_size, action_size=action_size, seed=0)
-scores = dqn(agent, env, brain_name)
+agent = Agent(state_size=state_size, action_size=action_size, seed=0, Dueling_Normal = 'Dueling')
+scores = dqn(agent, env, brain_name, 'double')
 
 # plot the scores
 fig = plt.figure()
