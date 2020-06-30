@@ -19,12 +19,12 @@ The aim of this project is to train an agent to learn how to navigate in the ban
 - ###### Double DQN:
 
   Using DQN the update would not be stable, because in the update, the target and the network to update are the same. Thus in Double DQN, we use two similar neural networks 'local' and 'target'. The first one learns during the experience replay and the second one is a copy of an older version of the local and just used to calculate the target Q value. As the formula shows, the local network is to get the best Q value and use its index in the target network to get the best action.
-  ![image](DoubleDQN_result\DDQN.png)
+  ![image](DoubleDQN_result/DDQN.png)
 
 - ###### Dueling DQN:
 
   Dueling DQN has a really powerful idea, I think it did not really help in my case because my states are discrete, but if I used the pixels states it would definetly more sense and it is really worth trying even in my case. Duel DQN only changes the model architecture, so we can apply all the techniques learned in DDQN. We will compute the value state function Q(s,a) as the sum of the Value function V(s) and an Advantage function A(s,a). Q tells how good are we in state s taking the action a. V tells how good are we in state s.Thus, the advantage function subtracts the value function from the Q function to obtain how important is each action.
-  ![image](DuelDQN_result\duel.png)
+  ![image](DuelDQN_result/duel.png)
 
 #### Code description:
 
@@ -44,7 +44,7 @@ The aim of this project is to train an agent to learn how to navigate in the ban
 
 #### Results:
 
-![image](DoubleDQN_result\Double_DQN_converged_520episode.png)
+![image](DoubleDQN_result/Double_DQN_converged_520episode.png) 
 
 #### Checkpoint:
 the two checkpoints are in the folders DoubleDQN_result and DuelDQN_result
