@@ -46,6 +46,8 @@ The aim of this project is to train an agent to learn how to navigate in the ban
 
 ![image](DoubleDQN_result/Double_DQN_converged_520episode.png)
 
+#### Checkpoint:
+the two checkpoints are in the folders DoubleDQN_result and DuelDQN_result
 #### Future Work:
 
 To improve the agent, we can add Prioritized Experience Replay, to replay important transitions more frequently, and therefore learn more efficiently. 
