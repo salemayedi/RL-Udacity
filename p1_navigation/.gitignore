@@ -1,5 +1,5 @@
-*.pth
-*.png
+#*.pth
+#*.png
 Banana_Windows_x86_64
 /Banana_Windows_x86_64
 //Banana_Windows_x86_64
