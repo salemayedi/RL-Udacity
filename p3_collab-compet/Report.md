@@ -18,7 +18,7 @@ The aim of this project is to train two agents to learn how to play Tennis. In t
   The writers of the algorithm consider DDPG as actor critic method. An actor is a neural network that represents the policy; decides an action from a given state. The critic is a neural network that represents the Q; which gives the Q value given an action and a state.
   So as given in the below figure, given a state , the actor network predicts the best believed action. This is a deterministic policy here. We take that action and give it as input with the state and predicts the Q value.
   In order to have stochastic policy, we need to apply a distribution on the action predicted by the actor network. This is how we apply the exploration by adding some noise sampled a noise process. We can see it as adding a Gaussian distribution on the action value. In the paper, we are using noise sampled from Ornstein-Uhlenbeck process.
-![image](images/ddpg_architecture.png)
+![image](images/ddpg_architecture.PNG)
 
 - ###### Multi Agent DDPG:
 
